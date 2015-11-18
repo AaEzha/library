@@ -1,0 +1,10 @@
+body {
+	background: transparent url("../img/boxed-bg.jpg") repeat fixed 0% 0%;
+}
+.background_home {
+	background-image: url("../img/background_new.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+    background-size: 100% auto;
+	min-height:450px;
+}

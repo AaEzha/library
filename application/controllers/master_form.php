@@ -1,0 +1,11 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Master_form extends CI_Controller {
+	function __construct(){
+        parent::__construct();		$this->load->model('master_form_model', 'mdl');
+    }		public function index(){
+		$data['data'] = $this->mdl->get_data();		$data['content'] = strtolower(__CLASS__) .'/'. strtolower(__FUNCTION__);
+		$this->load->view('layout/template_admin',$data);
+	}
+	public function update($id){		$data['data'] = $this->mdl->getById($id);		if($this->input->post('submit')<>''){			$upload_value = $this->upload('value');			if($upload_value['status'] == '1'){				$post = ($this->input->post());				unset($post['submit']);				$post['value'] = $upload_value['message']['file_name'];				$this->db->where("id_lookup",$id);				$this->db->update("lookup",$post);				redirect(strtolower(__CLASS__));			}else{				$data['upload_error'] = $this->upload->display_error();				$data['content'] = strtolower(__CLASS__) .'/'. strtolower(__FUNCTION__);				$this->load->view('layout/template_admin2',$data);			}		}else{			$data['content'] = strtolower(__CLASS__) .'/'. strtolower(__FUNCTION__);			$this->load->view('layout/template_admin2',$data);		}
+	}		function upload($upload=null){		$config['upload_path'] = './uploads/';		$config['allowed_types'] = 'pdf|doc|docx|gif|jpg|png';		$config['max_size']	= '1000';		$config['max_width']  = '1024';		$config['max_height']  = '768';		$this->load->library('upload', $config);		$this->upload->initialize($config);		if (!$this->upload->do_upload($upload))		{			$error = array('error' => $this->upload->display_error());			return array('status'=>'0', 'message'=>$error);		}		else		{			return array('status'=>'1', 'message'=>$this->upload->data());		}	}		function do_upload()	{		$config['upload_path'] = './uploads/';		$config['allowed_types'] = 'pdf|doc|docx';		$config['max_size']	= '1000';		$config['max_width']  = '1024';		$config['max_height']  = '768';		$this->load->library('upload', $config);		if ( ! $this->upload->do_upload())		{			$error = array('error' => $this->upload->display_errors());			$this->load->view('upload_form', $error);		}		else		{			$data = array('upload_data' => $this->upload->data());			$this->load->view('upload_success', $data);		}	}
+}

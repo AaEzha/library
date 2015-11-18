@@ -1,0 +1,40 @@
+<h1>PT. GMF AeroAsia</h1>
+	Soekarno Hatta International Airport, Cengkareng, Tangerang, Banten 19100, Indonesia
+	<br>
+	<table border="1">
+		<tr>
+			<td colspan="5">
+				Tanda bukti setoran
+			</td>
+		</tr>
+		<tr>
+			<td>Telah Terima Uang</td>
+			<td>:</td>
+			<td colspan="3">Rp. 200.000</td>
+		</tr>
+		<tr>
+			<td>Uang Pembayaran</td>
+			<td>:</td>
+			<td colspan="3">Initial</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+				Penyetor
+			</td>
+		</tr>
+		<tr>
+			<td>ID Number</td>
+			<td>:</td>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td>Nama Engineer</td>
+			<td>:</td>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td>Unit</td>
+			<td>:</td>
+			<td colspan="3"></td>
+		</tr>
+	</table>
