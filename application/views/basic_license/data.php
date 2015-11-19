@@ -10,13 +10,13 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
-                <th>Nomor ID</th>
+                <th>Name</th>
+                <th>ID Number</th>
                 <th>Unit</th>
-                <th>No. Telpon</th>
-				<th>Tgl Proses TW</th>
-				<th>Tgl Proses DKU</th>
-				<th>Tgl Selesai</th>
+                <th>Phone No.</th>
+				<th>TW Process</th>
+				<th>DKU Process</th>
+				<th>Finish Date</th>
 				<th>Status</th>
 				<th></th>
             </tr>
